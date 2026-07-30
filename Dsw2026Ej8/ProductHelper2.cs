@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace Dsw2026Ej8;
 
-namespace Dsw2026Ej8
+public partial class ProductHelper
 {
-    //Mismo nombre de clase para referenciar la primera parte
-    public partial class ProductHelper
+    private static string FormatearEtiqueta(long code, string description, decimal price)
     {
-      
-        //Private pq lo usa esta clase solamente
-        private string FormatearEtiqueta(long code, string description, decimal price)
-        {
-            
-            return $"[{code}] {description} - {price:C}";
-        }
+        return $"[{code}] {description} - {price:C}";
     }
 }

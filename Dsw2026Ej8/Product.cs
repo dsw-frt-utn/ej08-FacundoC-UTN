@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace Dsw2026Ej8;
 
-namespace Dsw2026Ej8
+public class Product
 {
-    //Clase de apoyo para que tome de referencia el problema
-    public class Product
-    {
-        public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
-        public void ActualizarDescripcion(string nuevaDescripcion)
-        {
-            Description = nuevaDescripcion;
-        }
+    public void ActualizarDescripcion(string nuevaDescripcion)
+    {
+        Description = nuevaDescripcion;
     }
 }

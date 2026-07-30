@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace Dsw2026Ej8;
 
-namespace Dsw2026Ej8
+public static class Extensions
 {
-    //Extension como su nombre indica permite modificar o agregar sin modificar la clase original
-    public static class Extensions
+    public static string ToProductCode(this string? code)
     {
-        // This como forma de aclaracion de que los textos string tendran ese metodo
-        public static string ToProductCode(this string code)
+        if (string.IsNullOrWhiteSpace(code))
         {
-            if (code == null) return "SIN-CODIGO";
-
-            // .Trim() borra espacios a los costados
-            // .ToUpper() lo hace mayúscula.
-            string normalizado = code.Trim().ToUpper();
-
-            // Esto reemplaza cualquier espacio en el medio por un guion.
-            string[] partes = normalizado.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            return string.Join("-", partes);
+            return "SIN-CODIGO";
         }
+
+        string normalizado = code.Trim().ToUpperInvariant();
+        string[] partes = normalizado.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return string.Join("-", partes);
     }
 }

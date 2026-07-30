@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace Dsw2026Ej8;
 
-namespace Dsw2026Ej8
+public class Problema2
 {
-    public class Problema2
+    public string CrearResumenVenta(long productCode, string productDescription, int quantity, decimal unitPrice)
     {
-        public string CrearResumenVenta(long productCode, string productDescription, int quantity, decimal unitPrice)
+        decimal total = quantity > 0 ? quantity * unitPrice : 0m;
+
+        var resumen = new
         {
-            
-            // Si la cantidad es mayor a 0, multiplicamos. Si no, es 0.
-            decimal totalCalculado = quantity > 0 ? quantity * unitPrice : 0;
+            Code = productCode,
+            Description = productDescription,
+            Quantity = quantity,
+            Total = total
+        };
 
-            // 2. Aquí creamos la clase anonima, declarandolo con var
-            var resumen = new
-            {
-                Code = productCode,
-                Description = productDescription,
-                Quantity = quantity,
-                Total = totalCalculado
-            };
-
-            // 3. Armamos el texto final sacando los datos de la clase anonima
-            return $"{resumen.Code}-{resumen.Description}-{resumen.Total}";
-        }
+        return $"{resumen.Code}-{resumen.Description}-{resumen.Total}";
     }
 }

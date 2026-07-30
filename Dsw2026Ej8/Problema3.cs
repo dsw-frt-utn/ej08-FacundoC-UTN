@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace Dsw2026Ej8;
 
-namespace Dsw2026Ej8
+public class Problema3
 {
-    public class Problema3
+    public string CompararCopias(int originalValue, Product product)
     {
-        public string CompararCopias(int originalValue, Product product)
-        {
-            // 1. Copiamos el número. 
-    
-            int copiaValue = originalValue;
-            copiaValue++; 
+        int copiaValue = originalValue;
+        copiaValue++;
 
-            // Copiamos el producto 
-         
-            Product copiaReferencia = product;
+        Product copiaReferencia = product;
+        copiaReferencia.ActualizarDescripcion(copiaReferencia.Description + " Modificado");
 
-            // Si modificamos la copia, la original tambien lo hace
-            copiaReferencia.ActualizarDescripcion(copiaReferencia.Description + " Modificado");
-
-            // Devolvemos el texto como pide el problema
-            return $"{originalValue}-{copiaValue}-{product.Description}";
-        }
+        return $"{originalValue}-{copiaValue}-{product.Description}";
     }
 }
